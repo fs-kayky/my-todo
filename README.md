@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# ToDo List React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application for managing your to-do list. Keep track of tasks, mark them as completed, and remove items as needed.
 
-## Available Scripts
+## Test It Yourself
 
-In the project directory, you can run:
+[**Demo**](#) - Click here to see the application in action.
 
-### `npm start`
+## How to Use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Adding a To-Do
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To add a new task to your to-do list:
 
-### `npm test`
+1. Type your task in the input field with the placeholder "O que precisa ser feito?"
+2. Press Enter to submit the task.
+3. Your new task will be added to the list.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Marking a To-Do as Completed
 
-### `npm run build`
+To mark a task as completed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Click on the task you want to mark. Alternatively, you can use the keyboard and press Enter while the task is selected.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Removing a To-Do
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To remove a task from the list:
 
-### `npm run eject`
+- Click the trashcan icon (🗑️) next to the task you want to delete.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Clear Input
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To clear the input field without adding a task:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Press the Escape key (Esc).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+- React
+- React Icons
+- CSS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Code Highlights
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. Adding a To-Do
 
-### Code Splitting
+```jsx
+const submit = () => {
+    erase();
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    setTodos([
+        ...todos,
+        { id: new Date().getTime(), title: value, checked: false },
+    ]);
+};
+```
 
-### Analyzing the Bundle Size
+This function adds a new to-do item to the list when the user submits a task.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 2. Toggling To-Do Status
 
-### Making a Progressive Web App
+```jsx
+const onToggle = (todo) => {
+    setTodos(
+        todos.map((obj) =>
+            obj.id === todo.id ? { ...obj, checked: !todo.checked } : obj
+        )
+    );
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This function toggles the status of a to-do item when clicked, demonstrating concise state updates and immutability principles in React.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to [test the application](#) and explore its features!
