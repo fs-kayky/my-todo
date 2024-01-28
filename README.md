@@ -1,6 +1,6 @@
 # ToDo List React App
 
-A simple React application for managing your to-do list. Keep track of tasks, mark them as completed, and remove items as needed.
+A React application for managing your to-do list. Keep track of tasks, mark them as completed, and remove items as needed.
 
 ## Test It Yourself
 
