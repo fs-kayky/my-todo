@@ -2,9 +2,9 @@
 
 A React application for managing your to-do list. Keep track of tasks, mark them as completed, and remove items as needed.
 
-## Test It Yourself
+##
 
-[**Demo**](#) - Click here to see the application in action.
+![Screenshot App](https://i.imgur.com/7jyQiKe.png)
 
 ## How to Use
 
